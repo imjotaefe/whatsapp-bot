@@ -12,8 +12,9 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-	if(message.body === '!ping') {
-		message.reply('pong');
+	if(message.from.includes("@c")){
+		message.reply('Olá! Irei ver sua mensagem somente sexta-feira às 18h, se for algo importante me ligue!');
+		message.getChat().then(chat => chat.markUnread());
 	}
 });
 
